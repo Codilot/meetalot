@@ -21,3 +21,7 @@ Builds the app for production to the `build` folder.\
 
 deploy on gh pages
 url [https://Codilot.github.io/meetalot](https://Codilot.github.io/meetalot)  
+
+### `serverless deploy`
+
+deploy new lambda functions

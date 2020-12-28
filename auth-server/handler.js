@@ -69,24 +69,34 @@ module.exports.getAccessToken = async (event) => {
     );
 
     const code = decodeURIComponent(`${event.pathParameters.code}`);
-
+    console.log(code)
     oAuth2Client
-        .getToken(code, (err, token) => {
-            if (err) {
-                return reject(err);
+        .getToken(
+            code,
+            (err, token) => {
+                if (err) {
+                    return reject(err);
+                }
+                return resolve(token);
             }
-            return resolve(token);
-        })
+        )
         .then((token) => {
-            return {
+            const response = {
                 statusCode: 200,
+                headers: {
+                    "Access-Control-Allow-Origin": "*",
+                },
                 body: JSON.stringify(token),
             };
+            return response
         })
         .catch((err) => {
             console.error(err);
             return {
                 statusCode: 500,
+                headers: {
+                    'Access-Control-Allow-Origin': '*',
+                  },
                 body: JSON.stringify(err),
             };
         });
