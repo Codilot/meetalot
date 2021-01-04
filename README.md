@@ -37,3 +37,6 @@ serves a local test page.
 navigate to `auth-server` folder
 run `serverless info`
 run `serverless deploy`
+
+Invoke authURL function
+`serverless invoke local --function getAuthURL`
