@@ -25,3 +25,15 @@ url [https://Codilot.github.io/meetalot](https://Codilot.github.io/meetalot)
 ### `serverless deploy`
 
 deploy new lambda functions
+
+
+### `http-server``
+navigate to `test` folder
+run `http-server`
+serves a local test page.
+
+
+### auth server
+navigate to `auth-server` folder
+run `serverless info`
+run `serverless deploy`
